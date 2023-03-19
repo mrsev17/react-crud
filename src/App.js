@@ -9,10 +9,19 @@ function App() {
         setData(data.filter((task, idx) => idx !== index));
     };
 
+    const handleDelete = (index) => {
+        data.splice(index, 1);
+        deleteTask(data);
+    };
+
     return (
         <div className="App">
             <InputForTask data={data} setData={setData} />
-            <TaskList data={data} deleteTask={deleteTask} />
+            <TaskList
+                data={data}
+                deleteTask={deleteTask}
+                handleDelete={handleDelete}
+            />
         </div>
     );
 }
