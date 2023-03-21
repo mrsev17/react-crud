@@ -92,3 +92,16 @@ h3 {
     display: flex;
     gap: 8px;
 }
+.crud__edit-input-change {
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    font-size: 20px;
+    padding: 4px;
+}
+.crud__edit-input-change:focus {
+    background-color: #4681f4;
+    border-radius: 4px;
+    width: 70%;
+}

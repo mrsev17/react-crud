@@ -18,6 +18,7 @@ function App() {
         <div className="App">
             <InputForTask data={data} setData={setData} />
             <TaskList
+                setData={setData}
                 data={data}
                 deleteTask={deleteTask}
                 handleDelete={handleDelete}
