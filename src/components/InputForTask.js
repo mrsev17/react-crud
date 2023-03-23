@@ -8,8 +8,6 @@ const InputForTask = ({ data, setData }) => {
             setData([...data, task]);
             setTask("");
         }
-        // setData([...data, task]);
-        // setTask("");
     };
 
     return (

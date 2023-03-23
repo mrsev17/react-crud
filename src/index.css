@@ -110,14 +110,6 @@ h3 {
     padding: 4px;
 }
 
-/*
-.crud__edit-input-change:focus {
-    background-color: #4681f4;
-    border-radius: 4px;
-    width: 70%;
-}
-*/
-
 .crud__input-edit-focus {
     background-color: #4681f4;
     border-radius: 4px;
