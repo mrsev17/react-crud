@@ -4,8 +4,12 @@ const InputForTask = ({ data, setData }) => {
     const [task, setTask] = useState("");
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        setData([...data, task]);
-        setTask("");
+        if (task.length > 3) {
+            setData([...data, task]);
+            setTask("");
+        }
+        // setData([...data, task]);
+        // setTask("");
     };
 
     return (
