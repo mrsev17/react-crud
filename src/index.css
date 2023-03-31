@@ -12,6 +12,7 @@ h1 {
 }
 ul {
     list-style: none;
+    padding: 0 0 20px 0;
 }
 .crud__wrapper {
     background-image: linear-gradient(to right, #00b4db, #0083b0);
@@ -19,7 +20,7 @@ ul {
     margin: 30px auto 0;
     min-height: 420px;
     border-radius: 6px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .crud__form-wrapper {
     padding: 20px 0 10px 0;
@@ -36,21 +37,26 @@ ul {
 .crud__main-input {
     width: 91%;
     padding: 4px;
-    height: 22px;
+    height: 32px;
     text-align: center;
     outline: none;
     border: none;
-    /* border: 1px solid grey; */
     font-size: 20px;
 }
 .crud__main-submit {
     width: 92%;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
     padding: 4px;
     border: none;
-
-    border: 1px solid grey;
+    transition: ease-in-out 0.9s;
+}
+.crud__main-submit:hover {
+    background-color: black;
+    color: whitesmoke;
+    transition: 0.9s;
 }
 .crud__list-area {
     padding: 10px;
@@ -73,7 +79,10 @@ ul {
 }
 .crud__task-text {
     color: whitesmoke;
+    font-size: 20px;
 }
+.crud__btn-save-change,
+.crud__btn-edit-task,
 .crud__btn-delete-task {
     font-size: 18px;
     padding: 4px;
@@ -96,4 +105,31 @@ ul {
 .fade-exit-active {
     opacity: 0;
     transition: opacity 500ms ease-out;
+}
+
+.crud__btn-edit-delete-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.crud__edit-input-change {
+    color: whitesmoke;
+    background-color: cadetblue;
+    font-size: 20px;
+    border: none;
+    padding: 4px;
+    border-radius: 6px;
+    outline: none;
+    width: 80%;
+}
+.crud__form-edit-task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.crud__task-check-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

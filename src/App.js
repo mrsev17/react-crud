@@ -13,11 +13,22 @@ function App() {
         setData(newData);
     };
 
+    const updateTask = (id, editedTask, isChecked) => {
+        const newData = data.map((task) => {
+            if (task.id === id) {
+                return { ...task, task: editedTask, isComplete: isChecked };
+            }
+            return task;
+        });
+        setData(newData);
+    };
+
+
     return (
         <div className="App">
             <div className="crud__wrapper">
                 <MainInput data={data} setData={setData} />
-                <TaskList data={data} deleteTask={deleteTask} />
+                <TaskList data={data} deleteTask={deleteTask} updateTask={updateTask}  />
             </div>
         </div>
     );

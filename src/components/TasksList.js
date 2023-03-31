@@ -1,12 +1,18 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TaskItem from "./TaskItem";
-const TaskList = ({ data, deleteTask }) => {
+const TaskList = ({ data, deleteTask, updateTask, handleCheckboxClick }) => {
     return (
         <ul>
             <TransitionGroup className="crud__list-area">
-                {data.map(({ task, id }) => (
+                {data.map(({ task, id, isComplete }) => (
                     <CSSTransition key={id} classNames="fade" timeout={500}>
-                        <TaskItem task={task} deleteTask={deleteTask} id={id} />
+                        <TaskItem
+                            isComplete={isComplete}
+                            task={task}
+                            deleteTask={deleteTask}
+                            updateTask={updateTask}
+                            id={id}
+                        />
                     </CSSTransition>
                 ))}
             </TransitionGroup>

@@ -6,16 +6,18 @@ const MainInput = ({ data, setData }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newData = [
-            ...data,
-            {
-                task: text,
-                isComplete: false,
-                id: uuidv4(),
-            },
-        ];
-        setData(newData);
-        setText("");
+        if (text.length >= 3 && /\S/.test(text)) {
+            const newData = [
+                ...data,
+                {
+                    task: text,
+                    isComplete: false,
+                    id: uuidv4(),
+                },
+            ];
+            setData(newData);
+            setText("");
+        }
     };
     return (
         <form className="crud__form-wrapper" onSubmit={handleSubmit}>
