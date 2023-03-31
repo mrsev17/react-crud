@@ -1,28 +1,24 @@
 import { useState } from "react";
 import "./App.css";
-import InputForTask from "./components/InputForTask";
-import TaskList from "./components/TaskList";
+import MainInput from "./components/MainInput";
+import TaskList from "./components/TasksList";
 
 function App() {
     const [data, setData] = useState([]);
-    const deleteTask = (index) => {
-        setData(data.filter((task, idx) => idx !== index));
-    };
 
-    const handleDelete = (index) => {
-        data.splice(index, 1);
-        deleteTask(data);
+    const deleteTask = (index) => {
+        const newData = data.filter(({ id }) => {
+            return id !== index;
+        });
+        setData(newData);
     };
 
     return (
         <div className="App">
-            <InputForTask data={data} setData={setData} />
-            <TaskList
-                setData={setData}
-                data={data}
-                deleteTask={deleteTask}
-                handleDelete={handleDelete}
-            />
+            <div className="crud__wrapper">
+                <MainInput data={data} setData={setData} />
+                <TaskList data={data} deleteTask={deleteTask} />
+            </div>
         </div>
     );
 }
